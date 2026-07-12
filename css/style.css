@@ -291,6 +291,10 @@ h1, h2, h3 {
   border: 1px solid var(--color-line);
 }
 
+.stores-widget-wrap {
+  margin: 16px 0;
+}
+
 .btn {
   display: inline-block;
   padding: 10px 24px;
