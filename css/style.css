@@ -1,18 +1,19 @@
 /* ============================================
    うつわのはなし – 共通スタイル
-   ブランド名は仮称です。決まったら全ファイルで
-   「うつわのはなし」を検索置換してください。
+   構成: 北欧、暮らしの道具店 (hokuohkurashi.com) を参考にした
+         雑誌型フィード構成。
+   トンマナ: nudevintage.thebase.in を参考にしたモノトーン基調。
    ============================================ */
 
 :root {
-  --color-bg: #f8f4ec;
-  --color-bg-soft: #f1ead9;
-  --color-text: #2e2a26;
-  --color-text-soft: #5c5449;
-  --color-accent: #a8623f;   /* 土・器を思わせる赤茶 */
-  --color-accent-dark: #7c4429;
-  --color-line: #ddd2bd;
-  --max-width: 960px;
+  --color-bg: #ffffff;
+  --color-bg-soft: #f4f3f1;
+  --color-text: #111111;
+  --color-text-soft: #6f6f6f;
+  --color-accent: #111111;      /* モノトーン基調(旧: 赤茶) */
+  --color-accent-dark: #000000;
+  --color-line: #e3e1dd;
+  --max-width: 1080px;
   --font-serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
   --font-sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
 }
@@ -41,7 +42,7 @@ img {
 }
 
 a {
-  color: var(--color-accent-dark);
+  color: var(--color-text);
   text-decoration: none;
 }
 
@@ -101,16 +102,17 @@ h1, h2, h3 {
 }
 
 .site-subtitle {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--color-text-soft);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .site-nav ul {
   list-style: none;
   display: flex;
-  gap: 28px;
+  gap: 26px;
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
@@ -118,12 +120,37 @@ h1, h2, h3 {
 
 .site-nav a {
   color: var(--color-text-soft);
-  font-size: 0.95rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .site-nav a.is-current,
 .site-nav a:hover {
-  color: var(--color-accent-dark);
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-text);
+  padding-bottom: 2px;
+}
+
+/* ---------- プロモバナー ---------- */
+
+.promo-banner {
+  background: var(--color-text);
+  color: #fff;
+}
+
+.promo-banner a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  padding: 10px 24px;
+}
+
+.promo-banner a:hover {
+  text-decoration: underline;
 }
 
 /* ---------- ヒーロー ---------- */
@@ -160,13 +187,160 @@ h1, h2, h3 {
   margin-bottom: 12px;
 }
 
+.section-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+  margin: 0 0 8px;
+}
+
 .section-lead {
   color: var(--color-text-soft);
   margin-bottom: 40px;
   max-width: 640px;
 }
 
-/* ---------- カードグリッド ---------- */
+/* ---------- 雑誌型フィード(読みもの/商品が混在) ---------- */
+
+.feed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.feed-card {
+  border: 1px solid var(--color-line);
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.feed-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.feed-card a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.feed-card-image {
+  aspect-ratio: 4 / 3;
+  background: var(--color-bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-soft);
+  font-size: 0.85rem;
+}
+
+.feed-card-body {
+  padding: 20px 22px;
+}
+
+.feed-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  margin-bottom: 12px;
+  border: 1px solid var(--color-text);
+}
+
+.feed-tag.is-product {
+  background: var(--color-text);
+  color: #fff;
+  border-color: var(--color-text);
+}
+
+.feed-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  margin: 0 0 8px;
+}
+
+.feed-card-excerpt {
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+  margin: 0 0 10px;
+}
+
+.feed-card-date {
+  font-size: 0.72rem;
+  color: var(--color-text-soft);
+  letter-spacing: 0.05em;
+}
+
+/* ---------- カテゴリータイル ---------- */
+
+.category-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.category-tile {
+  display: block;
+  text-align: center;
+  border: 1px solid var(--color-line);
+  padding: 32px 16px;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.category-tile:hover {
+  background: var(--color-bg-soft);
+  text-decoration: none;
+}
+
+.category-tile-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--color-bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--color-text-soft);
+}
+
+.category-tile-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+/* ---------- 記事(読みもの)ヘッダー ---------- */
+
+.note-header {
+  padding: 56px 0 24px;
+  border-bottom: 1px solid var(--color-line);
+  margin-bottom: 40px;
+}
+
+.note-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.note-title {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.note-lead {
+  color: var(--color-text-soft);
+  max-width: 640px;
+}
+
+/* ---------- カードグリッド(旧作家紹介互換) ---------- */
 
 .card-grid {
   display: grid;
@@ -177,14 +351,13 @@ h1, h2, h3 {
 .card {
   background: var(--color-bg-soft);
   border: 1px solid var(--color-line);
-  border-radius: 4px;
   overflow: hidden;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(60, 45, 30, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .card a {
@@ -268,11 +441,10 @@ h1, h2, h3 {
   }
 }
 
-/* ---------- 商品/BASEリンク ---------- */
+/* ---------- 商品/ショップリンク ---------- */
 
 .product-card {
   border: 1px solid var(--color-line);
-  border-radius: 4px;
   padding: 20px;
   background: var(--color-bg-soft);
   margin-bottom: 20px;
@@ -295,19 +467,39 @@ h1, h2, h3 {
   margin: 16px 0;
 }
 
+.shop-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
 .btn {
   display: inline-block;
   padding: 10px 24px;
   background: var(--color-accent);
   color: #fff;
-  border-radius: 3px;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
+  border-radius: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-accent);
 }
 
 .btn:hover {
-  background: var(--color-accent-dark);
+  background: #fff;
+  color: var(--color-accent);
   text-decoration: none;
+}
+
+.btn.btn-outline {
+  background: #fff;
+  color: var(--color-text);
+}
+
+.btn.btn-outline:hover {
+  background: var(--color-text);
+  color: #fff;
 }
 
 /* ---------- ニュース ---------- */
@@ -334,10 +526,11 @@ h1, h2, h3 {
 
 .news-tag {
   display: inline-block;
-  font-size: 0.75rem;
-  color: var(--color-accent-dark);
-  border: 1px solid var(--color-accent);
-  border-radius: 2px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  border: 1px solid var(--color-text);
   padding: 1px 8px;
   margin-bottom: 6px;
 }
@@ -353,12 +546,28 @@ h1, h2, h3 {
 
 .site-footer {
   border-top: 1px solid var(--color-line);
-  padding: 40px 0;
+  padding: 48px 0 40px;
   color: var(--color-text-soft);
   font-size: 0.85rem;
-  text-align: center;
 }
 
 .site-footer a {
   color: var(--color-text-soft);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  font-size: 0.78rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-line);
+  font-size: 0.78rem;
 }

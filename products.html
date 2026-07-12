@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>商品紹介 | うつわのはなし</title>
-<meta name="description" content="うつわのはなし でご紹介している商品の一覧です。気になる器はSTORESの販売ページからお求めいただけます。">
+<title>新着商品 | うつわのはなし</title>
+<meta name="description" content="うつわのはなし でご紹介している商品の一覧です。気になる器はBASE・STORESの販売ページからお求めいただけます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
@@ -19,12 +19,11 @@
     </div>
     <nav class="site-nav">
       <ul>
-        <li><a href="index.html">トップ</a></li>
-        <li><a href="concept.html">コンセプト</a></li>
-        <li><a href="artists/index.html">作家紹介</a></li>
-        <li><a href="products.html" class="is-current">商品紹介</a></li>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="products.html" class="is-current">新着商品</a></li>
+        <li><a href="artists/index.html">読みもの</a></li>
         <li><a href="news.html">お知らせ</a></li>
-        <li><a href="https://example-base-shop.thebase.in" target="_blank" rel="noopener">ショップ(BASE)</a></li>
+        <li><a href="https://yohenpottery.base.shop/" target="_blank" rel="noopener">ショップ(BASE)</a></li>
       </ul>
     </nav>
   </div>
@@ -32,8 +31,8 @@
 
 <section class="hero">
   <div class="container">
-    <h1>商品紹介</h1>
-    <p>作家が手がけた器を一点ずつご紹介しています。ご購入はSTORESの販売ページから承っております。</p>
+    <h1>新着商品</h1>
+    <p>作家が手がけた器を一点ずつご紹介しています。ご購入はBASE・STORESの販売ページから承っております。</p>
   </div>
 </section>
 
@@ -42,22 +41,33 @@
 
     <!--
       商品を追加する手順:
-      1. この .product-card ブロックを1つコピーして貼り付ける
+      1. この .feed-card ブロックを1つコピーして貼り付ける
       2. 商品名・説明文を書き換える
       3. STORESの商品ページで「販売ボタン」の埋め込みコードを取得し、
-         下記の <div class="storesjp-button" ...></div> の部分を貼り替える
+         storesjp-button の部分を貼り替える
          (data-storesjp-item / data-storesjp-variation / data-storesjp-name は
           商品ごとに異なる値になります)
+      4. BASEでも同じ商品を扱う場合は、商品ページURLをbtnリンクに設定する
       参考: STORES 管理画面 > 商品編集 > 販売ボタンを埋め込む
     -->
 
-    <div class="product-card">
-      <h3>【商品名を入力してください】</h3>
-      <p>※ここに商品の説明文(サイズ・特徴・使い方など)を記載します。作家からの提供文をもとに書き換えてください。</p>
+    <div class="feed-grid">
+      <div class="feed-card">
+        <div class="feed-card-image">写真準備中</div>
+        <div class="feed-card-body">
+          <span class="feed-tag is-product">商品ページ</span>
+          <p class="feed-card-title">【商品名を入力してください】</p>
+          <p class="feed-card-excerpt">※ここに商品の説明文(サイズ・特徴・使い方など)を記載します。作家からの提供文をもとに書き換えてください。</p>
 
-      <div class="stores-widget-wrap">
-        <div class="storesjp-button" data-storesjp-item="6a53667d3e49aad8dab09de2" data-storesjp-variation="6a53667d3e49aad8dab09de3" data-storesjp-name="utsuwatenyohen" data-storesjp-layout="layout_a" data-storesjp-lang="ja" ></div>
-        <script>(function(d,s,id){var st=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return;}var nst=d.createElement(s);nst.id=id;nst.src="//btn.stores.jp/button.js";nst.charset="UTF-8";st.parentNode.insertBefore(nst,st);})(document, "script", "storesjp-button");</script>
+          <div class="stores-widget-wrap">
+            <div class="storesjp-button" data-storesjp-item="6a53667d3e49aad8dab09de2" data-storesjp-variation="6a53667d3e49aad8dab09de3" data-storesjp-name="utsuwatenyohen" data-storesjp-layout="layout_a" data-storesjp-lang="ja" ></div>
+            <script>(function(d,s,id){var st=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return;}var nst=d.createElement(s);nst.id=id;nst.src="//btn.stores.jp/button.js";nst.charset="UTF-8";st.parentNode.insertBefore(nst,st);})(document, "script", "storesjp-button");</script>
+          </div>
+
+          <div class="shop-links">
+            <a class="btn" href="https://yohenpottery.base.shop/" target="_blank" rel="noopener">BASEショップで見る</a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -66,7 +76,14 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p>&copy; 2026 うつわのはなし</p>
+    <ul class="footer-links">
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="products.html">新着商品</a></li>
+      <li><a href="artists/index.html">読みもの</a></li>
+      <li><a href="news.html">お知らせ</a></li>
+      <li><a href="https://yohenpottery.base.shop/" target="_blank" rel="noopener">ショップ(BASE)</a></li>
+    </ul>
+    <p class="footer-bottom">&copy; 2026 うつわのはなし</p>
   </div>
 </footer>
 
