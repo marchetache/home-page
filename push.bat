@@ -10,12 +10,39 @@ echo ===============================
 echo  Site Update
 echo ===============================
 echo.
+
 git add .
-set "msg="
-set /p msg=Enter commit message (or press Enter to skip):
-if "%msg%"=="" set "msg=Site update"
-git commit -m "%msg%"
+
+REM The commit message is written by Claude to ..\commit-message.txt (outside the site folder, so it is not published).
+set "MSGFILE=%~dp0..\commit-message.txt"
+if exist "%MSGFILE%" (
+  git commit -F "%MSGFILE%"
+  move /y "%MSGFILE%" "%~dp0..\commit-message.last.txt" >nul
+) else (
+  git commit -m "Site update"
+)
+
+echo.
+echo === fetching latest changes from GitHub ===
+git pull --rebase
+if errorlevel 1 (
+  echo.
+  echo [ERROR] Could not merge the latest GitHub changes. Nothing was published.
+  echo Please send a screenshot of this window to Claude.
+  pause
+  exit /b 1
+)
+
+echo.
+echo === publishing ===
 git push
+if errorlevel 1 (
+  echo.
+  echo [ERROR] Publishing failed. Please send a screenshot of this window to Claude.
+  pause
+  exit /b 1
+)
+
 echo.
 echo Done. It may take a few minutes to appear on GitHub Pages.
 pause
