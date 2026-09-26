@@ -45,6 +45,13 @@ site/
 
 `news.html` 内の `<ul class="news-list">` の一番上に、既存の `<li class="news-item">` ブロックをコピーして貼り付け、日付と内容を書き換えてください。
 
+## 商品カテゴリー(右上の ☰ メニュー)について
+
+全ページの右上に ☰ ボタンがあり、押すと商品カテゴリー(お皿/お椀・鉢/カップ・湯のみ/花器)を選べます。選ぶと `products.html?category=plate` のように新着商品ページが開き、そのカテゴリーの器だけが表示されます。スマホでは、ホーム・読みものなどのメニューもこの中にまとまります。
+
+- カテゴリーの名前や数は、`js/main.js` の一番上にある `YOHEN_CATEGORIES` を書き換えると、全ページのメニューに反映されます。
+- 商品をカテゴリーに入れるには、`products.html` の商品カード(`<div class="feed-card" ...>`)に `data-category="plate"` のように書きます。2つ以上あてはまるときは `data-category="plate bowl"` のように半角スペースで区切ります。
+
 ## BASE・STORESとの連携について
 
 BASEショップ(`https://yohenpottery.base.shop/`)のリンクを全ページに反映済みです。商品ごとの個別リンク(`/items/【商品ID】`の部分)は、それぞれの商品詳細ページのURLに書き換えてください。

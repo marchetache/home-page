@@ -17,6 +17,7 @@
       <p class="site-title"><a href="index.html">yohen</a></p>
       <p class="site-subtitle">毎日おいしい、毎日いとおしい</p>
     </div>
+    <div class="site-header-actions">
     <nav class="site-nav">
       <ul>
         <li><a href="index.html">ホーム</a></li>
@@ -26,6 +27,10 @@
         <li><a href="https://yohenpottery.base.shop/" target="_blank" rel="noopener">ショップ</a></li>
       </ul>
     </nav>
+      <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -48,11 +53,15 @@
          (data-storesjp-item / data-storesjp-variation / data-storesjp-name は
           商品ごとに異なる値になります)
       4. BASEでも同じ商品を扱う場合は、商品ページURLをbtnリンクに設定する
+      5. feed-card の data-category に、商品のカテゴリーを書く
+         (plate=お皿 / bowl=お椀・鉢 / cup=カップ・湯のみ / vase=花器。
+          2つ以上あてはまるときは data-category="plate bowl" のように半角スペースで区切る。
+          カテゴリーの名前や種類は js/main.js の一番上で変えられます)
       参考: STORES 管理画面 > 商品編集 > 販売ボタンを埋め込む
     -->
 
-    <div class="feed-grid">
-      <div class="feed-card">
+    <div class="feed-grid" data-filterable>
+      <div class="feed-card" data-category="plate">
         <div class="feed-card-image">写真準備中</div>
         <div class="feed-card-body">
           <span class="feed-tag is-product">商品ページ</span>
@@ -87,5 +96,6 @@
   </div>
 </footer>
 
+<script src="js/main.js"></script>
 </body>
 </html>
