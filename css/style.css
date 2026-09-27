@@ -848,3 +848,202 @@ h1, h2, h3 {
   opacity: 0.5;
   cursor: default;
 }
+
+/* ---------- トップ: 目立つボタン ---------- */
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.hero-actions .btn {
+  min-width: 180px;
+  padding: 14px 28px;
+}
+
+/* ---------- 企画展・販売予定 ---------- */
+
+.event-block {
+  background: var(--color-bg-soft);
+}
+
+.event-date {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  margin: 0 0 12px;
+}
+
+/* ---------- お客さまの声 ---------- */
+
+.voice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.voice-card {
+  margin: 0;
+  padding: 24px;
+  border: 1px solid var(--color-line);
+}
+
+.voice-card blockquote {
+  margin: 0 0 12px;
+  font-family: var(--font-serif);
+}
+
+.voice-card figcaption {
+  font-size: 0.8rem;
+  color: var(--color-text-soft);
+}
+
+/* ---------- 商品カード(写真・価格・仕様・売り切れ) ---------- */
+
+.feed-card-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--color-bg-soft);
+}
+
+.feed-card-price {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  margin: 0 0 8px;
+}
+
+.spec-list {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  font-size: 0.78rem;
+  color: var(--color-text-soft);
+}
+
+.feed-card .btn {
+  margin-top: 6px;
+}
+
+.feed-card.is-soldout .feed-card-photo {
+  opacity: 0.45;
+}
+
+.feed-card.is-soldout .btn {
+  background: var(--color-bg-soft);
+  border-color: var(--color-line);
+  color: var(--color-text-soft);
+}
+
+.product-empty {
+  text-align: center;
+  padding: 24px 0 8px;
+}
+
+.product-empty-title {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.product-empty .shop-links {
+  justify-content: center;
+}
+
+/* ---------- ご利用ガイド・プライバシーポリシー ---------- */
+
+.guide {
+  max-width: 760px;
+}
+
+.guide-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 16px 0;
+  margin-bottom: 48px;
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+  font-size: 0.85rem;
+}
+
+.guide-block {
+  margin-bottom: 48px;
+  scroll-margin-top: 110px;
+}
+
+.guide-block .section-title {
+  font-size: 1.25rem;
+}
+
+.guide-table {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  margin: 0 0 16px;
+  border-top: 1px solid var(--color-line);
+}
+
+.guide-table dt,
+.guide-table dd {
+  margin: 0;
+  padding: 14px 8px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.guide-table dt {
+  background: var(--color-bg-soft);
+  font-size: 0.88rem;
+}
+
+.guide-list {
+  padding-left: 1.3em;
+}
+
+.guide-list li {
+  margin-bottom: 6px;
+}
+
+.guide-note {
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+}
+
+.guide a,
+.news-item a {
+  border-bottom: 1px solid currentColor;
+}
+
+.guide a:hover,
+.news-item a:hover {
+  text-decoration: none;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-line);
+  padding: 14px 0;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.faq-item p {
+  margin: 10px 0 0;
+  color: var(--color-text-soft);
+}
+
+@media (max-width: 640px) {
+  .guide-table {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- フッター: 2段目のリンク ---------- */
+
+.footer-links-sub {
+  font-size: 0.72rem;
+  margin-top: -8px;
+}

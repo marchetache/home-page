@@ -4,10 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>新着商品 | yohen</title>
-<meta name="description" content="yohen でご紹介している商品の一覧です。気になる器はBASE・STORESの販売ページからお求めいただけます。">
+<meta name="description" content="yohen でご紹介している商品の一覧です。気になる器は yohen のBASEショップからお求めいただけます。">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<meta property="og:site_name" content="yohen">
+<meta property="og:type" content="website">
+<meta property="og:title" content="新着商品 | yohen">
+<meta property="og:description" content="yohen でご紹介している商品の一覧です。気になる器は yohen のBASEショップからお求めいただけます。">
+<meta property="og:url" content="https://marchetache.github.io/home-page/products.html">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20260927d">
 </head>
 <body>
 
@@ -24,6 +31,7 @@
         <li><a href="products.html" class="is-current">新着商品</a></li>
         <li><a href="artists/index.html">読みもの</a></li>
         <li><a href="news.html">お知らせ</a></li>
+        <li><a href="guide.html">ご利用ガイド</a></li>
         <li><a href="https://yohenpottery.base.shop/" target="_blank" rel="noopener">ショップ</a></li>
       </ul>
     </nav>
@@ -37,7 +45,7 @@
 <section class="hero">
   <div class="container">
     <h1>新着商品</h1>
-    <p>作家が手がけた器を一点ずつご紹介しています。ご購入はBASE・STORESの販売ページから承っております。</p>
+    <p>作家が手がけた器を一点ずつご紹介しています。ご購入は yohen のBASEショップで承っております。</p>
   </div>
 </section>
 
@@ -46,37 +54,43 @@
 
     <!--
       商品を追加する手順:
-      1. この .feed-card ブロックを1つコピーして貼り付ける
-      2. 商品名・説明文を書き換える
-      3. STORESの商品ページで「販売ボタン」の埋め込みコードを取得し、
-         storesjp-button の部分を貼り替える
-         (data-storesjp-item / data-storesjp-variation / data-storesjp-name は
-          商品ごとに異なる値になります)
-      4. BASEでも同じ商品を扱う場合は、商品ページURLをbtnリンクに設定する
-      5. feed-card の data-category に、商品のカテゴリーを書く
-         (plate=お皿 / bowl=お椀・鉢 / cup=カップ・湯のみ / vase=花器。
-          2つ以上あてはまるときは data-category="plate bowl" のように半角スペースで区切る。
-          カテゴリーの名前や種類は js/main.js の一番上で変えられます)
-      参考: STORES 管理画面 > 商品編集 > 販売ボタンを埋め込む
+      1. 下の「商品カードのひな形」を、<div class="feed-grid" ...> の中にコピーして貼り付ける
+         (このメモ書きの囲みの外に出す)
+      2. 写真・商品名・価格・サイズ・使えるもの・BASEの商品ページURLを書き換える
+         写真は images/ フォルダに入れ、横幅1200px・300KB以下くらいに小さくしてから使う
+      3. data-category に種類を書く(plate=お皿 / bowl=お椀・鉢 / cup=カップ・湯のみ / vase=花器。
+         2つ以上なら data-category="plate bowl" のように半角スペースで区切る)
+      4. 売り切れたら、class="feed-card" を class="feed-card is-soldout" にし、ボタンの文言を「売り切れ」にする
+      5. 商品がそろったら、下の「product-empty」のブロックを消す
+
+      ▼ 商品カードのひな形
+      <div class="feed-card" data-category="plate">
+        <a href="https://yohenpottery.base.shop/items/【商品番号】" target="_blank" rel="noopener">
+          <img class="feed-card-photo" src="images/【写真のファイル名】.jpg" alt="【商品名】" loading="lazy" width="1200" height="900">
+          <div class="feed-card-body">
+            <span class="feed-tag is-product">一点もの</span>
+            <p class="feed-card-title">【作家名】【商品名】</p>
+            <p class="feed-card-price">【◯,◯◯◯】円(税込)</p>
+            <ul class="spec-list">
+              <li>サイズ:径【◯】cm × 高さ【◯】cm</li>
+              <li>電子レンジ【○/×】・食洗機【○/×】・オーブン【○/×】</li>
+            </ul>
+            <p class="feed-card-excerpt">【器の特徴・おすすめの使い方を2〜3行で】</p>
+            <span class="btn">BASEで購入する</span>
+          </div>
+        </a>
+      </div>
     -->
 
     <div class="feed-grid" data-filterable>
-      <div class="feed-card" data-category="plate">
-        <div class="feed-card-image">写真準備中</div>
-        <div class="feed-card-body">
-          <span class="feed-tag is-product">商品ページ</span>
-          <p class="feed-card-title">【商品名を入力してください】</p>
-          <p class="feed-card-excerpt">※ここに商品の説明文(サイズ・特徴・使い方など)を記載します。作家からの提供文をもとに書き換えてください。</p>
+    </div>
 
-          <div class="stores-widget-wrap">
-            <div class="storesjp-button" data-storesjp-item="6a53667d3e49aad8dab09de2" data-storesjp-variation="6a53667d3e49aad8dab09de3" data-storesjp-name="utsuwatenyohen" data-storesjp-layout="layout_a" data-storesjp-lang="ja" ></div>
-            <script>(function(d,s,id){var st=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return;}var nst=d.createElement(s);nst.id=id;nst.src="//btn.stores.jp/button.js";nst.charset="UTF-8";st.parentNode.insertBefore(nst,st);})(document, "script", "storesjp-button");</script>
-          </div>
-
-          <div class="shop-links">
-            <a class="btn" href="https://yohenpottery.base.shop/" target="_blank" rel="noopener">BASEショップで見る</a>
-          </div>
-        </div>
+    <div class="product-empty">
+      <p class="product-empty-title">ただいま、はじめての器をご用意しています。</p>
+      <p>販売開始の日時は、Instagram でいち早くお知らせします。フォローしてお待ちいただけたらうれしいです。</p>
+      <div class="shop-links">
+        <a class="btn" href="https://www.instagram.com/yohen_utsuwa/" target="_blank" rel="noopener">Instagram @yohen_utsuwa をフォロー</a>
+        <a class="btn btn-outline" href="guide.html">ご利用ガイドを見る</a>
       </div>
     </div>
 
@@ -90,12 +104,19 @@
       <li><a href="products.html">新着商品</a></li>
       <li><a href="artists/index.html">読みもの</a></li>
       <li><a href="news.html">お知らせ</a></li>
+      <li><a href="guide.html">ご利用ガイド</a></li>
+      <li><a href="index.html#contact">お問い合わせ</a></li>
       <li><a href="https://yohenpottery.base.shop/" target="_blank" rel="noopener">ショップ</a></li>
+    </ul>
+    <ul class="footer-links footer-links-sub">
+      <li><a href="https://yohenpottery.base.shop/law" target="_blank" rel="noopener">特定商取引法に基づく表記</a></li>
+      <li><a href="privacy.html">プライバシーポリシー</a></li>
+      <li><a href="https://www.instagram.com/yohen_utsuwa/" target="_blank" rel="noopener">Instagram @yohen_utsuwa</a></li>
     </ul>
     <p class="footer-bottom">&copy; 2026 yohen</p>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=20260927d"></script>
 </body>
 </html>

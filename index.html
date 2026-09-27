@@ -4,10 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>yohen | 作家ものの器を伝えるサイト</title>
-<meta name="description" content="日々の暮らしに寄り添う、作家ものの器を紹介するサイトです。作家の読みものと、新着商品、販売サイト(BASE/STORES)へのご案内をしています。">
+<meta name="description" content="日々の暮らしに寄り添う、作家ものの器を紹介するサイトです。作家の読みものと、新着商品、BASEショップへのご案内をしています。">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<meta property="og:site_name" content="yohen">
+<meta property="og:type" content="website">
+<meta property="og:title" content="yohen | 作家ものの器を伝えるサイト">
+<meta property="og:description" content="日々の暮らしに寄り添う、作家ものの器を紹介するサイトです。作家の読みものと、新着商品、BASEショップへのご案内をしています。">
+<meta property="og:url" content="https://marchetache.github.io/home-page/index.html">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260927c">
+<link rel="stylesheet" href="css/style.css?v=20260927d">
 </head>
 <body>
 
@@ -24,6 +31,7 @@
         <li><a href="products.html">新着商品</a></li>
         <li><a href="artists/index.html">読みもの</a></li>
         <li><a href="news.html">お知らせ</a></li>
+        <li><a href="guide.html">ご利用ガイド</a></li>
         <li><a href="https://yohenpottery.base.shop/" target="_blank" rel="noopener">ショップ</a></li>
       </ul>
     </nav>
@@ -35,13 +43,17 @@
 </header>
 
 <div class="promo-banner">
-  <a href="products.html">新着商品、入荷しました。最新一覧はこちら &rarr;</a>
+  <a href="https://www.instagram.com/yohen_utsuwa/" target="_blank" rel="noopener">新作の入荷・販売開始のお知らせは、Instagram @yohen_utsuwa でいち早くお届けします &rarr;</a>
 </div>
 
 <section class="hero">
   <div class="container">
     <h1>作り手の手から、暮らしの食卓へ。</h1>
-    <p>ひとつひとつ手で生み出される器と、それを作る作家たちの物語を伝えるサイトです。気になる器はBASE・STORESの販売ページからお求めいただけます。</p>
+    <p>ひとつひとつ手で生み出される器と、それを作る作家たちの物語を伝えるサイトです。気になる器は、yohen のBASEショップからお求めいただけます。</p>
+    <div class="hero-actions">
+      <a class="btn" href="products.html">器を見る</a>
+      <a class="btn btn-outline" href="guide.html">ご利用ガイド</a>
+    </div>
   </div>
 </section>
 
@@ -53,41 +65,19 @@
 
     <div class="feed-grid">
 
-      <div class="feed-card">
-        <a href="artists/artist-01.html">
-          <div class="feed-card-image">写真準備中</div>
-          <div class="feed-card-body">
-            <span class="feed-tag">読みもの</span>
-            <p class="feed-card-title">気取らない、飾らない。山田陶子さんの益子焼</p>
-            <p class="feed-card-excerpt">益子焼の伝統的な技法をベースにした、日々の食卓になじむ軽やかな器づくり。</p>
-            <p class="feed-card-date">2026.07.12</p>
-          </div>
-        </a>
-      </div>
 
       <div class="feed-card">
         <a href="products.html">
           <div class="feed-card-image">写真準備中</div>
           <div class="feed-card-body">
             <span class="feed-tag is-product">商品ページ</span>
-            <p class="feed-card-title">新しい器が入荷しました</p>
-            <p class="feed-card-excerpt">STORES・BASEの販売ページからお求めいただけます。</p>
-            <p class="feed-card-date">2026.07.12</p>
+            <p class="feed-card-title">新着商品の一覧</p>
+            <p class="feed-card-excerpt">作家の器を一点ずつご紹介しています。ご購入はBASEショップから。</p>
+            <p class="feed-card-date">2026.09.27</p>
           </div>
         </a>
       </div>
 
-      <div class="feed-card">
-        <a href="artists/artist-02.html">
-          <div class="feed-card-image">写真準備中</div>
-          <div class="feed-card-body">
-            <span class="feed-tag">読みもの</span>
-            <p class="feed-card-title">信楽の土から生まれる、佐藤一輝さんの器</p>
-            <p class="feed-card-excerpt">素朴で力強い質感を活かした、信楽焼ならではの器づくり。</p>
-            <p class="feed-card-date">2026.07.07</p>
-          </div>
-        </a>
-      </div>
 
       <div class="feed-card">
         <a href="concept.html">
@@ -105,22 +95,43 @@
   </div>
 </section>
 
+<!--
+  ▼ 企画展・販売予定のお知らせ枠
+  販売日が決まったら、下の <section ... hidden> の「hidden」を消して、日時・内容を書き換えてください。
+  同じ内容を Instagram でも告知すると、効果的です。
+-->
+<section class="section event-block" hidden>
+  <div class="container">
+    <p class="section-eyebrow">Exhibition</p>
+    <h2 class="section-title">【企画展の名前】</h2>
+    <p class="event-date">【10月◯日(◯) 20:00】 販売開始</p>
+    <p class="section-lead">【出品する作家・器の紹介を2〜3行で】</p>
+    <div class="shop-links">
+      <a class="btn" href="https://www.instagram.com/yohen_utsuwa/" target="_blank" rel="noopener">Instagramで最新情報を見る</a>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container">
     <p class="section-eyebrow">Category</p>
-    <h2 class="section-title">カテゴリーから探す</h2>
+    <h2 class="section-title">器の種類から探す</h2>
     <div class="category-tiles">
-      <a class="category-tile" href="artists/index.html">
-        <span class="category-tile-icon">読み物</span>
-        <span class="category-tile-label">読みもの</span>
+      <a class="category-tile" href="products.html?category=plate">
+        <span class="category-tile-icon">皿</span>
+        <span class="category-tile-label">お皿</span>
       </a>
-      <a class="category-tile" href="products.html">
-        <span class="category-tile-icon">商品</span>
-        <span class="category-tile-label">新着商品</span>
+      <a class="category-tile" href="products.html?category=bowl">
+        <span class="category-tile-icon">鉢</span>
+        <span class="category-tile-label">お椀・鉢</span>
       </a>
-      <a class="category-tile" href="news.html">
-        <span class="category-tile-icon">お知らせ</span>
-        <span class="category-tile-label">お知らせ</span>
+      <a class="category-tile" href="products.html?category=cup">
+        <span class="category-tile-icon">杯</span>
+        <span class="category-tile-label">カップ・湯のみ</span>
+      </a>
+      <a class="category-tile" href="products.html?category=vase">
+        <span class="category-tile-icon">花</span>
+        <span class="category-tile-label">花器</span>
       </a>
     </div>
   </div>
@@ -130,6 +141,13 @@
   <div class="container">
     <h2 class="section-title">お知らせ</h2>
     <ul class="news-list">
+      <li class="news-item">
+        <p class="news-date">2026.09.27</p>
+        <div>
+          <span class="news-tag">サイト</span>
+          <p><a href="guide.html">ご利用ガイド</a>を公開しました。送料やお届け、お手入れについてまとめています。</p>
+        </div>
+      </li>
       <li class="news-item">
         <p class="news-date">2026.07.12</p>
         <div>
@@ -145,10 +163,39 @@
 <section class="section">
   <div class="container">
     <h2 class="section-title">ご購入について</h2>
-    <p class="section-lead">器の販売はBASE・STORESの店舗ページで行っています。各記事・商品ページから、それぞれの販売ページへ移動できます。</p>
+    <p class="section-lead">器のご購入は、yohen のBASEショップで承っています。クレジットカード・PayPay・銀行振込がご利用いただけ、お支払いの確認後3日以内に発送します。送料やお手入れについては、ご利用ガイドをご覧ください。</p>
     <div class="shop-links">
       <a class="btn" href="https://yohenpottery.base.shop/" target="_blank" rel="noopener">BASEのショップを見る</a>
-      <a class="btn btn-outline" href="products.html">新着商品を見る</a>
+      <a class="btn btn-outline" href="guide.html">ご利用ガイドを見る</a>
+    </div>
+  </div>
+</section>
+
+<!--
+  ▼ お客さまの声
+  いただいた感想を載せるときは、下の <section ... hidden> の「hidden」を消して、
+  voice-card のブロックを感想の数だけコピーしてください。(ご本人の了承を得たものだけを載せましょう)
+-->
+<section class="section" hidden>
+  <div class="container">
+    <p class="section-eyebrow">Voice</p>
+    <h2 class="section-title">お客さまの声</h2>
+    <div class="voice-grid">
+      <figure class="voice-card">
+        <blockquote>【いただいた感想】</blockquote>
+        <figcaption>【お住まいの地域・お名前のイニシャルなど】/ 【ご購入の器】</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="section-eyebrow">Instagram</p>
+    <h2 class="section-title">器のある食卓を、Instagramで</h2>
+    <p class="section-lead">新作の入荷や販売開始のお知らせ、器を使った盛り付けを Instagram でご紹介しています。お手元に届いた器の写真を <strong>#yohen_utsuwa</strong> をつけて投稿していただけると、とてもうれしいです。</p>
+    <div class="shop-links">
+      <a class="btn" href="https://www.instagram.com/yohen_utsuwa/" target="_blank" rel="noopener">Instagram @yohen_utsuwa をフォロー</a>
     </div>
   </div>
 </section>
@@ -199,12 +246,19 @@
       <li><a href="products.html">新着商品</a></li>
       <li><a href="artists/index.html">読みもの</a></li>
       <li><a href="news.html">お知らせ</a></li>
+      <li><a href="guide.html">ご利用ガイド</a></li>
+      <li><a href="index.html#contact">お問い合わせ</a></li>
       <li><a href="https://yohenpottery.base.shop/" target="_blank" rel="noopener">ショップ</a></li>
+    </ul>
+    <ul class="footer-links footer-links-sub">
+      <li><a href="https://yohenpottery.base.shop/law" target="_blank" rel="noopener">特定商取引法に基づく表記</a></li>
+      <li><a href="privacy.html">プライバシーポリシー</a></li>
+      <li><a href="https://www.instagram.com/yohen_utsuwa/" target="_blank" rel="noopener">Instagram @yohen_utsuwa</a></li>
     </ul>
     <p class="footer-bottom">&copy; 2026 yohen</p>
   </div>
 </footer>
 
-<script src="js/main.js?v=20260927c"></script>
+<script src="js/main.js?v=20260927d"></script>
 </body>
 </html>
