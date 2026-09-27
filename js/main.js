@@ -1,5 +1,7 @@
 // yohen - 共通JS
-// ハンバーガーメニュー(右上の ☰)と、新着商品ページのカテゴリー絞り込みを担当します。
+// ハンバーガーメニュー(右上の ☰)を担当します。
+// ※ 新着商品ページは廃止しました(商品はBASEで一本化)。下のカテゴリー一覧と絞り込みの処理は、
+//   BASEにカテゴリを作ったときに使えるよう残してあります(今は SHOW_CATEGORIES = false で非表示)。
 
 // ============================================
 // 商品カテゴリーの一覧
@@ -7,6 +9,7 @@
 //   id   : 半角英小文字(商品カードの data-category と同じにする)
 //   name : メニューに表示する名前
 // ============================================
+var SHOW_CATEGORIES = false; // BASEにカテゴリを作ったら true にして、リンク先を直す
 var YOHEN_CATEGORIES = [
   { id: "plate", name: "お皿" },
   { id: "bowl",  name: "お椀・鉢" },
@@ -33,13 +36,15 @@ var YOHEN_CATEGORIES = [
     drawer.setAttribute("aria-hidden", "true");
 
     var html = '<button class="drawer-close" type="button" aria-label="メニューを閉じる">&times;</button>';
-    html += '<p class="drawer-heading">商品カテゴリー</p><ul class="drawer-list">';
-    html += '<li><a href="' + productsUrl + '"' + (onProductsPage && !currentCategory ? ' class="is-current"' : '') + '>すべての器</a></li>';
-    YOHEN_CATEGORIES.forEach(function (c) {
-      var cur = onProductsPage && currentCategory === c.id ? ' class="is-current"' : '';
-      html += '<li><a href="' + productsUrl + '?category=' + c.id + '"' + cur + '>' + c.name + '</a></li>';
-    });
-    html += '</ul>';
+    if (SHOW_CATEGORIES) {
+      html += '<p class="drawer-heading">商品カテゴリー</p><ul class="drawer-list">';
+      html += '<li><a href="' + productsUrl + '"' + (onProductsPage && !currentCategory ? ' class="is-current"' : '') + '>すべての器</a></li>';
+      YOHEN_CATEGORIES.forEach(function (c) {
+        var cur = onProductsPage && currentCategory === c.id ? ' class="is-current"' : '';
+        html += '<li><a href="' + productsUrl + '?category=' + c.id + '"' + cur + '>' + c.name + '</a></li>';
+      });
+      html += '</ul>';
+    }
 
     // ヘッダーのメニュー(ホーム・読みものなど)も、引き出しの下のほうに並べる(スマホ用)
     var navLinks = document.querySelectorAll(".site-nav a");
