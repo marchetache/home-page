@@ -111,8 +111,8 @@ var YOHEN_CATEGORIES = [
     }
   }
 
-  // ---------- お問い合わせフォーム: 送信する ----------
-  // 送信内容は、フォームの data-endpoint に書いた宛先(FormSubmit)経由でメールに届きます。
+  // ---------- お問い合わせフォーム: 入力チェック ----------
+  // 送信そのものは、フォームの action(FormSubmit)へ普通に送ります。送信後は thanks.html に移動します。
   var contactForm = document.querySelector("form[data-contact-form]");
   if (contactForm) {
     var statusEl = contactForm.querySelector(".form-status");
@@ -123,9 +123,6 @@ var YOHEN_CATEGORIES = [
     };
 
     contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      // 入力チェック
       var firstInvalid = null;
       contactForm.querySelectorAll("input[required], textarea[required]").forEach(function (field) {
         var ok = field.value.trim() !== "" && (field.type !== "email" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim()));
@@ -134,40 +131,21 @@ var YOHEN_CATEGORIES = [
         if (!ok && !firstInvalid) firstInvalid = field;
       });
       if (firstInvalid) {
+        e.preventDefault();
         setStatus("未入力の項目、またはメールアドレスの形式をご確認ください。", "error");
         firstInvalid.focus();
         return;
       }
 
-      var endpoint = contactForm.getAttribute("data-endpoint");
-      if (!endpoint) {
-        setStatus("お問い合わせフォームは、ただいま準備中です。恐れ入りますが、しばらくしてから改めてお試しください。", "error");
+      // パソコンの中のファイルを直接開いているときは、送信できないのでお知らせする
+      if (location.protocol === "file:") {
+        e.preventDefault();
+        setStatus("(確認用のお知らせ)パソコン内のファイルを直接開いているため、送信できません。公開後のサイトでお試しください。", "error");
         return;
       }
 
-      var data = {};
-      new FormData(contactForm).forEach(function (value, key) { data[key] = value; });
-      data._subject = "【yohen】ホームページからのお問い合わせ";
-      data._template = "table";
-
       submitBtn.disabled = true;
       setStatus("送信しています…", "");
-
-      fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify(data)
-      })
-        .then(function (res) { return res.json().then(function (json) { return { ok: res.ok, json: json }; }); })
-        .then(function (r) {
-          if (!r.ok || String(r.json.success) === "false") throw new Error("send failed");
-          contactForm.reset();
-          setStatus("お問い合わせを受け付けました。ありがとうございます。内容を確認のうえ、ご連絡いたします。", "success");
-        })
-        .catch(function () {
-          setStatus("送信できませんでした。お手数ですが、時間をおいて再度お試しください。", "error");
-        })
-        .then(function () { submitBtn.disabled = false; });
     });
 
     // 入力し直したら、赤い枠を消す
@@ -176,6 +154,12 @@ var YOHEN_CATEGORIES = [
         e.target.classList.remove("is-invalid");
         e.target.removeAttribute("aria-invalid");
       }
+    });
+
+    // 「戻る」でページに戻ったとき、ボタンを押せる状態に戻す
+    window.addEventListener("pageshow", function () {
+      submitBtn.disabled = false;
+      setStatus("", "");
     });
   }
 })();

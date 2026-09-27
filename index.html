@@ -159,8 +159,12 @@
     <h2 class="section-title">お問い合わせ</h2>
     <p class="section-lead">器のこと、ご注文や配送のこと、お取り扱いのご相談など、お気軽にお寄せください。内容を確認のうえ、ご入力いただいたメールアドレスへお返事いたします。</p>
 
-    <!-- 送信先の設定: data-endpoint に「https://formsubmit.co/ajax/受け取り用のメールアドレス」を入れると動きます -->
-    <form class="contact-form" data-contact-form data-endpoint="" novalidate>
+    <!-- 送信先の設定: action の「https://formsubmit.co/」のあとが受け取り用のメールアドレスです。送信後は thanks.html(サンクスページ)へ移動します -->
+    <form class="contact-form" data-contact-form action="https://formsubmit.co/matsubiz0706@gmail.com" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="【yohen】ホームページからのお問い合わせ">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://marchetache.github.io/home-page/thanks.html">
       <div class="form-row">
         <label for="contact-name">お名前<span class="form-required">必須</span></label>
         <input type="text" id="contact-name" name="お名前" autocomplete="name" required>
