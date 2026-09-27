@@ -14,7 +14,8 @@
   --color-accent-dark: #000000;
   --color-line: #e3e1dd;
   --max-width: 1080px;
-  --font-serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  /* ロゴ「yohen」だけ明朝体。それ以外の文字はすべてゴシック体(Noto Sans JP)で、自然体な印象に */
+  --font-logo: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
   --font-sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
 }
 
@@ -51,8 +52,8 @@ a:hover {
 }
 
 h1, h2, h3 {
-  font-family: var(--font-serif);
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-weight: 500;
   line-height: 1.5;
   color: var(--color-text);
 }
@@ -90,7 +91,7 @@ h1, h2, h3 {
 }
 
 .site-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-logo);
   font-size: 1.4rem;
   letter-spacing: 0.1em;
   margin: 0;
@@ -257,7 +258,7 @@ h1, h2, h3 {
 }
 
 .feed-card-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.05rem;
   margin: 0 0 8px;
 }
@@ -381,7 +382,7 @@ h1, h2, h3 {
 }
 
 .card-name {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.05rem;
   margin: 0 0 6px;
 }
@@ -521,7 +522,7 @@ h1, h2, h3 {
   flex: 0 0 110px;
   color: var(--color-text-soft);
   font-size: 0.85rem;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
 }
 
 .news-tag {
@@ -655,7 +656,7 @@ h1, h2, h3 {
 }
 
 .drawer-heading {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   color: var(--color-text-soft);
@@ -723,8 +724,8 @@ h1, h2, h3 {
 }
 
 .filter-bar-label strong {
-  font-family: var(--font-serif);
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-weight: 500;
   margin-left: 4px;
 }
 
@@ -871,7 +872,7 @@ h1, h2, h3 {
 }
 
 .event-date {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.15rem;
   margin: 0 0 12px;
 }
@@ -892,7 +893,7 @@ h1, h2, h3 {
 
 .voice-card blockquote {
   margin: 0 0 12px;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
 }
 
 .voice-card figcaption {
@@ -910,7 +911,7 @@ h1, h2, h3 {
 }
 
 .feed-card-price {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1rem;
   margin: 0 0 8px;
 }
@@ -943,7 +944,7 @@ h1, h2, h3 {
 }
 
 .product-empty-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.2rem;
   margin-bottom: 8px;
 }
