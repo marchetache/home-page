@@ -7,7 +7,7 @@
 <meta name="description" content="日々の暮らしに寄り添う、作家ものの器を紹介するサイトです。作家の読みものと、新着商品、販売サイト(BASE/STORES)へのご案内をしています。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260927b">
+<link rel="stylesheet" href="css/style.css?v=20260927c">
 </head>
 <body>
 
@@ -159,24 +159,21 @@
     <h2 class="section-title">お問い合わせ</h2>
     <p class="section-lead">器のこと、ご注文や配送のこと、お取り扱いのご相談など、お気軽にお寄せください。内容を確認のうえ、ご入力いただいたメールアドレスへお返事いたします。</p>
 
-    <!-- 送信先の設定: action の「https://formsubmit.co/」のあとが受け取り用のメールアドレスです。
+    <!-- 送信先の設定: お問い合わせは Google フォーム「yohen お問い合わせ」に送られ、スプレッドシート「yohen お問い合わせ(回答)」にたまります。
+         各項目の name="entry.数字" は Google フォームの質問の受付番号です(質問を作り直したら変わるので、書き換えが必要です)。
          送信は js/main.js がページを移動せずに行い、送信後はこのサイト内の thanks.html(サンクスページ)を表示します -->
-    <form class="contact-form" data-contact-form action="https://formsubmit.co/matsubiz0706@gmail.com" method="POST" novalidate>
-      <input type="hidden" name="_subject" value="【yohen】ホームページからのお問い合わせ">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://marchetache.github.io/home-page/thanks.html">
+    <form class="contact-form" data-contact-form action="https://docs.google.com/forms/d/e/1FAIpQLSeasXNGZyYBMrJU8NNU8RQhdqVkGmVdwis0JCi6XGUpjRa02g/formResponse" method="POST" novalidate>
       <div class="form-row">
         <label for="contact-name">お名前<span class="form-required">必須</span></label>
-        <input type="text" id="contact-name" name="お名前" autocomplete="name" required>
+        <input type="text" id="contact-name" name="entry.423725902" autocomplete="name" required>
       </div>
       <div class="form-row">
         <label for="contact-email">メールアドレス<span class="form-required">必須</span></label>
-        <input type="email" id="contact-email" name="email" autocomplete="email" inputmode="email" required>
+        <input type="email" id="contact-email" name="entry.77252341" autocomplete="email" inputmode="email" required>
       </div>
       <div class="form-row">
         <label for="contact-type">お問い合わせの種類</label>
-        <select id="contact-type" name="お問い合わせの種類">
+        <select id="contact-type" name="entry.2121571491">
           <option value="器・商品について">器・商品について</option>
           <option value="ご注文・配送について">ご注文・配送について</option>
           <option value="お取り扱い・取材について">お取り扱い・取材について</option>
@@ -185,10 +182,10 @@
       </div>
       <div class="form-row">
         <label for="contact-message">お問い合わせ内容<span class="form-required">必須</span></label>
-        <textarea id="contact-message" name="お問い合わせ内容" rows="7" required></textarea>
+        <textarea id="contact-message" name="entry.1245680852" rows="7" required></textarea>
       </div>
       <!-- 迷惑メール対策(人には見えない欄です) -->
-      <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="text" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
       <p class="form-status" role="status" aria-live="polite"></p>
       <button type="submit" class="btn contact-submit">送信する</button>
     </form>
@@ -208,6 +205,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20260927b"></script>
+<script src="js/main.js?v=20260927c"></script>
 </body>
 </html>

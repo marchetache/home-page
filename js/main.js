@@ -112,8 +112,8 @@ var YOHEN_CATEGORIES = [
   }
 
   // ---------- お問い合わせフォーム: 入力チェックと送信 ----------
-  // 送信は、ページを移動せずに FormSubmit へ届けます(別のサイトの画面は表示しません)。
-  // 届いたら、このサイト内の thanks.html(サンクスページ)を表示します。
+  // 送信は、ページを移動せずに Google フォームへ届けます(Google の画面は表示しません)。
+  // 届けたら、このサイト内の thanks.html(サンクスページ)を表示します。
   var contactForm = document.querySelector("form[data-contact-form]");
   if (contactForm) {
     var statusEl = contactForm.querySelector(".form-status");
@@ -146,29 +146,30 @@ var YOHEN_CATEGORIES = [
       }
 
       e.preventDefault();
+
+      // 迷惑メール対策: 人には見えない欄に何か入っていたら、ロボットとみなして送らない
+      var honey = contactForm.querySelector(".form-honeypot");
+      if (honey && honey.value) {
+        location.href = base + "thanks.html";
+        return;
+      }
+
       submitBtn.disabled = true;
       setStatus("送信しています…", "");
 
-      // action の「https://formsubmit.co/メールアドレス」を、ページ内送信用の「https://formsubmit.co/ajax/メールアドレス」に読み替える
-      var endpoint = contactForm.getAttribute("action").replace("formsubmit.co/", "formsubmit.co/ajax/");
-      var data = {};
-      new FormData(contactForm).forEach(function (value, key) {
-        if (key !== "_next" && key !== "_captcha") data[key] = value;
-      });
-
-      fetch(endpoint, {
+      // Google フォームは送信結果を教えてくれないしくみ(no-cors)のため、
+      // 通信そのものが失敗したときだけエラーを表示し、それ以外はサンクスページへ進みます。
+      fetch(contactForm.getAttribute("action"), {
         method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify(data)
+        mode: "no-cors",
+        body: new URLSearchParams(new FormData(contactForm))
       })
-        .then(function (res) { return res.json().then(function (json) { return { ok: res.ok, json: json }; }); })
-        .then(function (r) {
-          if (!r.ok || String(r.json.success) !== "true") throw new Error("send failed");
+        .then(function () {
           location.href = base + "thanks.html";
         })
         .catch(function () {
           submitBtn.disabled = false;
-          setStatus("送信できませんでした。お手数ですが、時間をおいて再度お試しください。", "error");
+          setStatus("送信できませんでした。通信状況をご確認のうえ、時間をおいて再度お試しください。", "error");
         });
     });
 
