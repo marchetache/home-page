@@ -110,4 +110,72 @@ var YOHEN_CATEGORIES = [
       document.title = category.name + " | " + document.title;
     }
   }
+
+  // ---------- お問い合わせフォーム: 送信する ----------
+  // 送信内容は、フォームの data-endpoint に書いた宛先(FormSubmit)経由でメールに届きます。
+  var contactForm = document.querySelector("form[data-contact-form]");
+  if (contactForm) {
+    var statusEl = contactForm.querySelector(".form-status");
+    var submitBtn = contactForm.querySelector('button[type="submit"]');
+    var setStatus = function (text, type) {
+      statusEl.textContent = text;
+      statusEl.className = "form-status" + (type ? " is-" + type : "");
+    };
+
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // 入力チェック
+      var firstInvalid = null;
+      contactForm.querySelectorAll("input[required], textarea[required]").forEach(function (field) {
+        var ok = field.value.trim() !== "" && (field.type !== "email" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim()));
+        field.classList.toggle("is-invalid", !ok);
+        field.setAttribute("aria-invalid", ok ? "false" : "true");
+        if (!ok && !firstInvalid) firstInvalid = field;
+      });
+      if (firstInvalid) {
+        setStatus("未入力の項目、またはメールアドレスの形式をご確認ください。", "error");
+        firstInvalid.focus();
+        return;
+      }
+
+      var endpoint = contactForm.getAttribute("data-endpoint");
+      if (!endpoint) {
+        setStatus("お問い合わせフォームは、ただいま準備中です。恐れ入りますが、しばらくしてから改めてお試しください。", "error");
+        return;
+      }
+
+      var data = {};
+      new FormData(contactForm).forEach(function (value, key) { data[key] = value; });
+      data._subject = "【yohen】ホームページからのお問い合わせ";
+      data._template = "table";
+
+      submitBtn.disabled = true;
+      setStatus("送信しています…", "");
+
+      fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      })
+        .then(function (res) { return res.json().then(function (json) { return { ok: res.ok, json: json }; }); })
+        .then(function (r) {
+          if (!r.ok || String(r.json.success) === "false") throw new Error("send failed");
+          contactForm.reset();
+          setStatus("お問い合わせを受け付けました。ありがとうございます。内容を確認のうえ、ご連絡いたします。", "success");
+        })
+        .catch(function () {
+          setStatus("送信できませんでした。お手数ですが、時間をおいて再度お試しください。", "error");
+        })
+        .then(function () { submitBtn.disabled = false; });
+    });
+
+    // 入力し直したら、赤い枠を消す
+    contactForm.addEventListener("input", function (e) {
+      if (e.target.classList.contains("is-invalid")) {
+        e.target.classList.remove("is-invalid");
+        e.target.removeAttribute("aria-invalid");
+      }
+    });
+  }
 })();

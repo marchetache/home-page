@@ -754,3 +754,97 @@ h1, h2, h3 {
 .feed-card[hidden] {
   display: none;
 }
+
+/* ---------- お問い合わせフォーム ---------- */
+
+.contact-form {
+  max-width: 640px;
+}
+
+.form-row {
+  margin-bottom: 24px;
+}
+
+.form-row label {
+  display: block;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.form-required {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 0 6px;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: var(--color-text);
+  vertical-align: 1px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  border-radius: 0;
+  transition: border-color 0.15s ease;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--color-text);
+}
+
+.contact-form .is-invalid {
+  border-color: #b3261e;
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.form-status {
+  min-height: 1.5em;
+  margin: 0 0 16px;
+  font-size: 0.88rem;
+}
+
+.form-status.is-error {
+  color: #b3261e;
+}
+
+.form-status.is-success {
+  padding: 16px 18px;
+  background: var(--color-bg-soft);
+  color: var(--color-text);
+}
+
+.contact-submit {
+  min-width: 200px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.contact-submit:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
