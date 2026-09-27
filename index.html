@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 準備中のため検索エンジンに登録しない設定です。本格始動のときにこの2行を消してください -->
+<meta name="robots" content="noindex">
 <title>yohen | 作家ものの器を伝えるサイト</title>
 <meta name="description" content="日々の暮らしに寄り添う、作家ものの器を紹介するサイトです。作家の読みものと、新着商品、BASEショップへのご案内をしています。">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
@@ -11,10 +13,11 @@
 <meta property="og:title" content="yohen | 作家ものの器を伝えるサイト">
 <meta property="og:description" content="日々の暮らしに寄り添う、作家ものの器を紹介するサイトです。作家の読みものと、新着商品、BASEショップへのご案内をしています。">
 <meta property="og:url" content="https://marchetache.github.io/home-page/index.html">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://marchetache.github.io/home-page/images/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260927e">
+<link rel="stylesheet" href="css/style.css?v=20260927f">
 </head>
 <body>
 
@@ -28,11 +31,11 @@
     <nav class="site-nav">
       <ul>
         <li><a href="index.html" class="is-current">ホーム</a></li>
-        <li><a href="products.html">新着商品</a></li>
         <li><a href="artists/index.html">読みもの</a></li>
-        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="products.html">新着商品</a></li>
         <li><a href="guide.html">ご利用ガイド</a></li>
         <li><a href="https://yohenpottery.base.shop/" target="_blank" rel="noopener">ショップ</a></li>
+        <li><a href="https://yohenpottery.base.shop/shops/yohenpottery-base-shop/checkout/edit" target="_blank" rel="noopener">カート</a></li>
       </ul>
     </nav>
       <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
@@ -43,7 +46,7 @@
 </header>
 
 <div class="promo-banner">
-  <a href="https://www.instagram.com/yohen_utsuwa/" target="_blank" rel="noopener">新作の入荷・販売開始のお知らせは、Instagram @yohen_utsuwa でいち早くお届けします &rarr;</a>
+  <a href="products.html">新着の器、3点を掲載しました。一覧はこちら &rarr;</a>
 </div>
 
 <section class="hero">
@@ -59,34 +62,56 @@
 
 <section class="section">
   <div class="container">
+    <p class="section-eyebrow">Concept</p>
+    <h2 class="section-title">作り手の顔が見える器を</h2>
+    <p class="section-lead">量産品にはない、手仕事ならではの温かみや揺らぎ。yohen では、普段の食卓で気軽に使える器を、それを生み出す作り手の想いとあわせてご紹介しています。</p>
+    <div class="shop-links">
+      <a class="btn btn-outline" href="concept.html">コンセプトを読む</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
     <p class="section-eyebrow">Read &amp; Shop</p>
     <h2 class="section-title">読みもの・新着商品</h2>
-    <p class="section-lead">作家の日々や器づくりの話と、新しく仲間入りした器を、あわせてご紹介しています。</p>
+    <p class="section-lead">旅先で出会った器のお話と、新しく仲間入りした器を、あわせてご紹介しています。</p>
 
     <div class="feed-grid">
 
+      <div class="feed-card" data-category="bowl">
+        <a href="https://yohenpottery.base.shop/items/159698023" target="_blank" rel="noopener">
+          <img class="feed-card-photo" src="images/item-fruit-1.jpg" alt="波打つ縁の、脚つきの器" loading="lazy" width="1200" height="800">
+          <div class="feed-card-body">
+            <span class="feed-tag is-product">used・残り1点</span>
+            <p class="feed-card-title">フルーツを盛るための器</p>
+            <p class="feed-card-price">3,000円(税込)</p>
+            <p class="feed-card-excerpt">塩屋のカフェで開かれていた催しで出会った、ひとさら。波のようにゆれる縁と、すっと伸びた脚が、果物をいっそうおいしそうに見せてくれます。</p>
+            <span class="btn">BASEで購入する</span>
+          </div>
+        </a>
+      </div>
 
       <div class="feed-card">
-        <a href="products.html">
-          <div class="feed-card-image">写真準備中</div>
+        <a href="artists/artist-02.html">
+          <img class="feed-card-photo" src="images/item-yogurt-1.jpg" alt="しのぎ模様の、信楽焼の小さな器" loading="lazy" width="1200" height="800">
           <div class="feed-card-body">
-            <span class="feed-tag is-product">商品ページ</span>
-            <p class="feed-card-title">新着商品の一覧</p>
-            <p class="feed-card-excerpt">作家の器を一点ずつご紹介しています。ご購入はBASEショップから。</p>
+            <span class="feed-tag">読みもの</span>
+            <p class="feed-card-title">信楽焼の、ヨーグルトのための器</p>
+            <p class="feed-card-excerpt">日本六古窯のひとつ、信楽焼。土のぬくもりを感じる小さな器を、毎朝のヨーグルトに。</p>
             <p class="feed-card-date">2026.09.27</p>
           </div>
         </a>
       </div>
 
-
       <div class="feed-card">
-        <a href="concept.html">
-          <div class="feed-card-image">写真準備中</div>
+        <a href="artists/artist-03.html">
+          <img class="feed-card-photo" src="images/item-cup-1.jpg" alt="淡い海色の釉薬がかかった、白いフリーカップ" loading="lazy" width="1200" height="800">
           <div class="feed-card-body">
             <span class="feed-tag">読みもの</span>
-            <p class="feed-card-title">作り手の顔が見える器を</p>
-            <p class="feed-card-excerpt">yohen が大切にしている考え方、器を選ぶ基準について。</p>
-            <p class="feed-card-date">2026.07.07</p>
+            <p class="feed-card-title">石本藤雄さんと、Mustakivi のフリーカップ</p>
+            <p class="feed-card-excerpt">マリメッコで活躍したデザイナーが、故郷・愛媛で手がけるブランド「Mustakivi」。淡い海色のカップをご紹介します。</p>
+            <p class="feed-card-date">2026.09.27</p>
           </div>
         </a>
       </div>
@@ -141,6 +166,13 @@
   <div class="container">
     <h2 class="section-title">お知らせ</h2>
     <ul class="news-list">
+      <li class="news-item">
+        <p class="news-date">2026.09.27</p>
+        <div>
+          <span class="news-tag">商品紹介</span>
+          <p><a href="products.html">新着の器を3点</a>掲載しました。あわせて、器にまつわる<a href="artists/index.html">読みもの</a>を公開しています。</p>
+        </div>
+      </li>
       <li class="news-item">
         <p class="news-date">2026.09.27</p>
         <div>
@@ -243,12 +275,14 @@
   <div class="container">
     <ul class="footer-links">
       <li><a href="index.html">ホーム</a></li>
-      <li><a href="products.html">新着商品</a></li>
+      <li><a href="concept.html">コンセプト</a></li>
       <li><a href="artists/index.html">読みもの</a></li>
+      <li><a href="products.html">新着商品</a></li>
       <li><a href="news.html">お知らせ</a></li>
       <li><a href="guide.html">ご利用ガイド</a></li>
       <li><a href="index.html#contact">お問い合わせ</a></li>
       <li><a href="https://yohenpottery.base.shop/" target="_blank" rel="noopener">ショップ</a></li>
+      <li><a href="https://yohenpottery.base.shop/shops/yohenpottery-base-shop/checkout/edit" target="_blank" rel="noopener">カート</a></li>
     </ul>
     <ul class="footer-links footer-links-sub">
       <li><a href="https://yohenpottery.base.shop/law" target="_blank" rel="noopener">特定商取引法に基づく表記</a></li>
@@ -259,6 +293,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20260927e"></script>
+<script src="js/main.js?v=20260927f"></script>
 </body>
 </html>

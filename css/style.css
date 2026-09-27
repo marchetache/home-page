@@ -905,6 +905,7 @@ h1, h2, h3 {
 
 .feed-card-photo {
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   background: var(--color-bg-soft);
@@ -1047,4 +1048,69 @@ h1, h2, h3 {
 .footer-links-sub {
   font-size: 0.72rem;
   margin-top: -8px;
+}
+
+/* ---------- 読みもの記事 ---------- */
+
+.article {
+  max-width: 760px;
+  padding-bottom: 64px;
+}
+
+.article-back {
+  margin-top: 24px;
+  font-size: 0.85rem;
+}
+
+.article-photo {
+  margin: 0 0 32px;
+}
+
+.article-photo img {
+  width: 100%;
+  height: auto;
+}
+
+.article-heading {
+  font-size: 1.2rem;
+  margin: 40px 0 12px;
+}
+
+.article-body p {
+  margin: 0 0 20px;
+}
+
+.article-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-top: 48px;
+  padding: 24px;
+  background: var(--color-bg-soft);
+}
+
+.article-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.article-item-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--color-text-soft);
+  margin: 0 0 4px;
+}
+
+.article-item-name {
+  font-size: 1.05rem;
+  margin: 0 0 4px;
+}
+
+@media (max-width: 640px) {
+  .article-item {
+    grid-template-columns: 1fr;
+  }
 }

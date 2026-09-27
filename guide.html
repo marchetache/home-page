@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 準備中のため検索エンジンに登録しない設定です。本格始動のときにこの2行を消してください -->
+<meta name="robots" content="noindex">
 <title>ご利用ガイド | yohen</title>
 <meta name="description" content="yohen のご利用ガイドです。送料、お届けまでの日数、お支払い方法、返品・交換、手仕事の器のお手入れについてご案内します。">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
@@ -11,10 +13,11 @@
 <meta property="og:title" content="ご利用ガイド | yohen">
 <meta property="og:description" content="yohen のご利用ガイドです。送料、お届けまでの日数、お支払い方法、返品・交換、手仕事の器のお手入れについてご案内します。">
 <meta property="og:url" content="https://marchetache.github.io/home-page/guide.html">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://marchetache.github.io/home-page/images/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260927e">
+<link rel="stylesheet" href="css/style.css?v=20260927f">
 </head>
 <body>
 
@@ -28,11 +31,11 @@
     <nav class="site-nav">
       <ul>
         <li><a href="index.html">ホーム</a></li>
-        <li><a href="products.html">新着商品</a></li>
         <li><a href="artists/index.html">読みもの</a></li>
-        <li><a href="news.html">お知らせ</a></li>
+        <li><a href="products.html">新着商品</a></li>
         <li><a href="guide.html" class="is-current">ご利用ガイド</a></li>
         <li><a href="https://yohenpottery.base.shop/" target="_blank" rel="noopener">ショップ</a></li>
+        <li><a href="https://yohenpottery.base.shop/shops/yohenpottery-base-shop/checkout/edit" target="_blank" rel="noopener">カート</a></li>
       </ul>
     </nav>
       <button class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false">
@@ -59,6 +62,7 @@
       <a href="#payment">お支払い方法</a>
       <a href="#returns">返品・交換</a>
       <a href="#gift">ギフト</a>
+      <a href="#used">used の器について</a>
       <a href="#handmade">手仕事の器について</a>
       <a href="#care">お手入れ</a>
       <a href="#faq">よくあるご質問</a>
@@ -103,6 +107,11 @@
       <p>大切な方への贈りものに、ギフトラッピングを<strong>1点100円(税込)</strong>で承ります。ご注文の際、商品ページでラッピングのオプションをお選びください。</p>
     </div>
 
+    <div class="guide-block" id="used">
+      <h2 class="section-title">used の器について</h2>
+      <p>商品名に「used」とある器は、一度どなたかの手を経た器(中古品)です。細かなすれや、使われてきた跡がある場合があります。気になる点は、ご購入前にお気軽に<a href="index.html#contact">お問い合わせ</a>ください。</p>
+    </div>
+
     <div class="guide-block" id="handmade">
       <h2 class="section-title">手仕事の器について</h2>
       <p>yohen でご紹介する器は、作家がひとつひとつ手で作ったものです。そのため、同じ器でも形・大きさ・色・釉薬の流れ方に少しずつ違いがあります。小さな鉄粉(黒い点)や、釉薬のむら、貫入(表面の細かなひび模様)も、手仕事ならではの表情としてお楽しみいただけたらうれしいです。</p>
@@ -143,12 +152,14 @@
   <div class="container">
     <ul class="footer-links">
       <li><a href="index.html">ホーム</a></li>
-      <li><a href="products.html">新着商品</a></li>
+      <li><a href="concept.html">コンセプト</a></li>
       <li><a href="artists/index.html">読みもの</a></li>
+      <li><a href="products.html">新着商品</a></li>
       <li><a href="news.html">お知らせ</a></li>
       <li><a href="guide.html">ご利用ガイド</a></li>
       <li><a href="index.html#contact">お問い合わせ</a></li>
       <li><a href="https://yohenpottery.base.shop/" target="_blank" rel="noopener">ショップ</a></li>
+      <li><a href="https://yohenpottery.base.shop/shops/yohenpottery-base-shop/checkout/edit" target="_blank" rel="noopener">カート</a></li>
     </ul>
     <ul class="footer-links footer-links-sub">
       <li><a href="https://yohenpottery.base.shop/law" target="_blank" rel="noopener">特定商取引法に基づく表記</a></li>
@@ -159,6 +170,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20260927e"></script>
+<script src="js/main.js?v=20260927f"></script>
 </body>
 </html>
