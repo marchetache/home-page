@@ -111,8 +111,9 @@ var YOHEN_CATEGORIES = [
     }
   }
 
-  // ---------- お問い合わせフォーム: 入力チェック ----------
-  // 送信そのものは、フォームの action(FormSubmit)へ普通に送ります。送信後は thanks.html に移動します。
+  // ---------- お問い合わせフォーム: 入力チェックと送信 ----------
+  // 送信は、ページを移動せずに FormSubmit へ届けます(別のサイトの画面は表示しません)。
+  // 届いたら、このサイト内の thanks.html(サンクスページ)を表示します。
   var contactForm = document.querySelector("form[data-contact-form]");
   if (contactForm) {
     var statusEl = contactForm.querySelector(".form-status");
@@ -144,8 +145,31 @@ var YOHEN_CATEGORIES = [
         return;
       }
 
+      e.preventDefault();
       submitBtn.disabled = true;
       setStatus("送信しています…", "");
+
+      // action の「https://formsubmit.co/メールアドレス」を、ページ内送信用の「https://formsubmit.co/ajax/メールアドレス」に読み替える
+      var endpoint = contactForm.getAttribute("action").replace("formsubmit.co/", "formsubmit.co/ajax/");
+      var data = {};
+      new FormData(contactForm).forEach(function (value, key) {
+        if (key !== "_next" && key !== "_captcha") data[key] = value;
+      });
+
+      fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      })
+        .then(function (res) { return res.json().then(function (json) { return { ok: res.ok, json: json }; }); })
+        .then(function (r) {
+          if (!r.ok || String(r.json.success) !== "true") throw new Error("send failed");
+          location.href = base + "thanks.html";
+        })
+        .catch(function () {
+          submitBtn.disabled = false;
+          setStatus("送信できませんでした。お手数ですが、時間をおいて再度お試しください。", "error");
+        });
     });
 
     // 入力し直したら、赤い枠を消す
