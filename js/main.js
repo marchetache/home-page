@@ -46,10 +46,10 @@ var YOHEN_CATEGORIES = [
       html += '</ul>';
     }
 
-    // ヘッダーのメニュー(ホーム・読みものなど)も、引き出しの下のほうに並べる(スマホ用)
+    // ヘッダーのメニュー(すのまま器店のこと・お買い物・カート・すのまマガジン)を、引き出しにも並べる(見出しはなし)
     var navLinks = document.querySelectorAll(".site-nav a");
     if (navLinks.length) {
-      html += '<p class="drawer-heading">メニュー</p><ul class="drawer-list is-sub">';
+      html += '<ul class="drawer-list">';
       navLinks.forEach(function (a) {
         var target = a.getAttribute("target") ? ' target="_blank" rel="noopener"' : '';
         html += '<li><a href="' + a.href + '"' + target + '>' + a.textContent + '</a></li>';
