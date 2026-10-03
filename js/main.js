@@ -54,6 +54,8 @@ var YOHEN_CATEGORIES = [
         var target = a.getAttribute("target") ? ' target="_blank" rel="noopener"' : '';
         html += '<li><a href="' + a.href + '"' + target + '>' + a.textContent + '</a></li>';
       });
+      // ご利用ガイドは、ヘッダーには出さず ☰ の中にだけ置く
+      html += '<li><a href="' + base + 'guide.html"' + (/\/guide\.html$/.test(location.pathname) ? ' class="is-current"' : '') + '>ご利用ガイド</a></li>';
       html += '</ul>';
     }
     drawer.innerHTML = html;
