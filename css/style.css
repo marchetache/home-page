@@ -120,14 +120,6 @@ h1, h2, h3 {
   }
 }
 
-.site-subtitle {
-  font-size: 0.7rem;
-  color: var(--color-text-soft);
-  letter-spacing: 0.12em;
-  margin: 0;
-  text-transform: uppercase;
-}
-
 .site-nav ul {
   list-style: none;
   display: flex;
