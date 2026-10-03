@@ -1,5 +1,5 @@
 /* ============================================
-   yohen – 共通スタイル
+   すのまま器店 – 共通スタイル
    構成: 北欧、暮らしの道具店 (hokuohkurashi.com) を参考にした
          雑誌型フィード構成。
    トンマナ: nudevintage.thebase.in を参考にしたモノトーン基調。
@@ -14,7 +14,7 @@
   --color-accent-dark: #000000;
   --color-line: #e3e1dd;
   --max-width: 1080px;
-  /* ロゴ「yohen」だけ明朝体。それ以外の文字はすべてゴシック体(Noto Sans JP)で、自然体な印象に */
+  /* ロゴ「すのまま器店」だけ明朝体。それ以外の文字はすべてゴシック体(Noto Sans JP)で、自然体な印象に */
   --font-logo: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
   --font-sans: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
 }
