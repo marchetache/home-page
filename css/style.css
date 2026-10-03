@@ -2,17 +2,18 @@
    すのまま器店 – 共通スタイル
    構成: 北欧、暮らしの道具店 (hokuohkurashi.com) を参考にした
          雑誌型フィード構成。
-   トンマナ: nudevintage.thebase.in を参考にしたモノトーン基調。
+   トンマナ: ロゴの深緑(#1f3a2e)をコーポレートカラーとし、
+         白地に深緑を基調とする。
    ============================================ */
 
 :root {
   --color-bg: #ffffff;
-  --color-bg-soft: #f4f3f1;
-  --color-text: #111111;
-  --color-text-soft: #6f6f6f;
-  --color-accent: #111111;      /* モノトーン基調(旧: 赤茶) */
-  --color-accent-dark: #000000;
-  --color-line: #e3e1dd;
+  --color-bg-soft: #f2f5f2;
+  --color-text: #1f3a2e;        /* コーポレートカラー(ロゴの深緑) */
+  --color-text-soft: #5f6e66;
+  --color-accent: #1f3a2e;      /* コーポレートカラー(ロゴの深緑) */
+  --color-accent-dark: #142820;
+  --color-line: #dfe5e0;
   --max-width: 1080px;
   /* ロゴ「すのまま器店」だけ明朝体。それ以外の文字はすべてゴシック体(Noto Sans JP)で、自然体な印象に */
   --font-logo: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
