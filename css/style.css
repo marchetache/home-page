@@ -112,12 +112,12 @@ h1, h2, h3 {
 .site-logo {
   display: block;
   width: auto;
-  height: 28px;
+  height: 24px;
 }
 
 @media (max-width: 640px) {
   .site-logo {
-    height: 24px;
+    height: 20px;
   }
 }
 
