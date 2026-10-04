@@ -1130,3 +1130,48 @@ h1, h2, h3 {
     grid-template-columns: 1fr;
   }
 }
+
+/* 読みもの記事：署名・小見出し・リスト・表 */
+.article-byline {
+  margin: 12px 0 0;
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+}
+
+.article-subheading {
+  font-size: 1rem;
+  margin: 28px 0 8px;
+}
+
+.article-list {
+  margin: 0 0 20px;
+  padding-left: 1.4em;
+}
+
+.article-list li {
+  margin-bottom: 6px;
+}
+
+.article-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 20px;
+  font-size: 0.9rem;
+}
+
+.article-table th,
+.article-table td {
+  border-bottom: 1px solid var(--color-line);
+  padding: 10px 8px;
+  text-align: left;
+}
+
+.article-table th {
+  font-weight: 500;
+  background: var(--color-bg-soft);
+}
+
+.article-table th:nth-child(-n+2),
+.article-table td:nth-child(-n+2) {
+  white-space: nowrap;
+}
