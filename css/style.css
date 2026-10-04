@@ -1177,3 +1177,22 @@ h1, h2, h3 {
 .article-table td:nth-child(-n+2) {
   white-space: nowrap;
 }
+
+/* 読みもの記事：この記事を書いた人 */
+.article-author {
+  margin: 48px 0 0;
+  padding: 20px 22px;
+  background: var(--color-bg-soft);
+  font-size: 0.9rem;
+}
+
+.article-author p {
+  margin: 0;
+}
+
+.article-author-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-soft);
+  margin-bottom: 6px !important;
+}
