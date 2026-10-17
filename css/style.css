@@ -1181,3 +1181,44 @@ h1, h2, h3 {
 .article-table td:nth-child(-n+2) {
   white-space: nowrap;
 }
+
+/* ---------- 仮の画像(写真準備中) ---------- */
+
+.photo-placeholder {
+  aspect-ratio: 3 / 2;
+  margin: 0 0 32px;
+  background: var(--color-bg-soft);
+  border: 1px dashed var(--color-line);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+  color: var(--color-text-soft);
+  font-size: 0.85rem;
+}
+
+.article-body .photo-placeholder,
+.guide-block .photo-placeholder {
+  margin: 12px 0 20px;
+}
+
+.section .photo-placeholder,
+.section-photo {
+  max-width: 720px;
+  margin-bottom: 24px;
+}
+
+.section-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- すのまま器店のこと ---------- */
+
+.about-block {
+  max-width: 760px;
+  margin-bottom: 80px;
+}
