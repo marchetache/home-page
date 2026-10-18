@@ -1307,6 +1307,10 @@ h1, h2, h3 {
   border-radius: 8px;
 }
 
+.section-photo.is-small {
+  max-width: 520px;
+}
+
 /* ---------- すのまま器店のこと ---------- */
 
 .about-block {
