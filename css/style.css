@@ -1304,6 +1304,7 @@ h1, h2, h3 {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 
 /* ---------- すのまま器店のこと ---------- */
